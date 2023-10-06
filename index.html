@@ -7,70 +7,64 @@
     <title>My portfolio</title>
   </head>
   <body>
-    <section class="is-small navSectionBar">
-      <div class="hero-head">
-        <nav class="navbar">
-          <div class="container">
-            <div class="navbar-brand">
-              <a class="navbar-item">
-                <img src="https://bulma.io/images/bulma-type-white.png" alt="Logo">
-              </a>
-              <span class="navbar-burger" data-target="navbarMenuHeroB">
-                <span>About</span>
-                <span>Project</span>
-                <span>Contact</span>
-              </span>
-            </div>
-            <div id="navbarMenuHeroB" class="navbar-menu">
-              <div class="navbar-end">
-                <a  href="#about" class="navbar-item is-active">
-                  About
-                </a>
-                <a  href= "#portfolio" class="navbar-item">
-                  Projects
-                </a>
-                <a href="#contactme" class="navbar-item">
-                  Contact
-                </a>
-                </span>
-              </div>
-            </div>
-          </div>
-        </nav>
+    <!-- Navigation section of the website -->
+    <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+      <div>
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
       </div>
-          </p>
+    
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-end">
+          <a class="navbar-item">
+            About
+          </a>
+    
+          <a class="navbar-item">
+            Projects
+          </a>
+          <a class="navbar-item">
+            Contact
+          </a>
         </div>
-      </div>
+              
+    <!-- end of Navigation section of the website -->
+    </nav>
 
-          </div>
-        </nav>
-      </div>
-    </section>
 
-  
     <!-- /html code for the about section. includes who I'm I heading, javascript write up, image of man in chair -->
 
-
+  
     <section class="AboutSection" id="about">
       <div class="heroContent" id="sectionBox">
         <h1 class="HeroContentHead">I bring ideas<span class="HeadEdits"> to life</span> 🚀</h1>
         <div id="typing-container">
-          <p id="typing-text" class="aboutBlurb"></p>
+          <p id="typing-text" class="aboutBlurb">
+          I'm a <strong>growth product manager</strong> with a <strong>broad range of experience</strong> in startups and scale-up across multiple industries and verticals. My main areas of focus are:
+    <ul>
+        <li>Sustainability</li>
+        <li>SaaS</li>
+        <li>FinTech</li>
+    </ul>
+
+
+
+          </p>
           <span id="cursor" class="blink">|</span>
         </div>
       </div>
       <div class="aboutImage">
-        <div><img src="Digital_creator-removebg-preview.png" class="HeroImg">
+        <img src="Digital_creator-removebg-preview.png" class="HeroImg">
+      </div>
         </section>
     
     <script src="script.js"></script>
 
   <!-- skill section -->
-
-
-
-    <section class="section AboutMe">
-        <div class="card SkillsCard">
+  <div class="SkillsCard">
           <div class="ContentSkillsCard">
             <h1 class="SkillsCardTitle">Skills</h1>
             <h2 class="SkillsCardSubtitle">If you had to put them in a box</h2>
@@ -102,8 +96,32 @@
           </div>
         </div>
       </div>
-    </section>
-    <script src="script.js"></script>
+
+      <div class="imagesForSkillsCardMobile">
+        <div>
+          <!-- <figure class="SkillCards"> -->
+            <img src="Data Analytics.jpg">
+          </figure>
+        </div>
+        <div>
+          <!-- <figure class="SkillCards"> -->
+            <img src="Growth Strategy.jpg">
+          </figure>
+        </div>
+        <div>
+          <!-- <figure class="SkillCards"> -->
+            <img src="Market & User Research.jpg">
+          </figure>
+        </div>
+        <div>
+          <!-- <figure class="SkillCards"> -->
+            <img src="Product Strategy.jpg">
+          </figure>
+        </div>
+      </div>
+    </div>
+  </div>
+   
 
 <!-- This is my portfolio section. Here is all my work I'm proud of -->
 
@@ -198,7 +216,7 @@
 </div>
 </div>
 
-<script src="script.js"></script>
+
 
 <section>
   
@@ -212,9 +230,14 @@
     <H2>I am always keen to connect with people in tech, and learn more about product mangement.</H2>
 
     <div class="connectIcons">
-      <a href="http://www.linkedin.com/in/benvink"><img src="5.png" alt=""></a>
-      <a href="mailto:benlvink@gmail.com"> <img src="6.png" alt=""></a>
-     <a href="tel:+447592492316"><img src="7.png" alt=""></a>
+      <a href="http://www.linkedin.com/in/benvink" class="LinkedinImg"><img src="5.png" alt="">
+      </a>
+      
+      <a href="mailto:benlvink@gmail.com" class="EmailImg"> <img src="6.png" alt="">
+      </a>
+     <a href="tel:+447592492316" class="PhoneImg"><img src="7.png" alt="">
+    
+    </a>
       
     </div>
     
@@ -224,17 +247,6 @@
 </div>
    
 </section>
-<footer class="footer">
-  <div class="content has-text-centered">
-    <p>
-      <strong>Bulma</strong> by <a href="https://jgthms.com">Jeremy Thomas</a>. The source code is licensed
-      <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
-      is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
-    </p>
-  </div>
-</footer>
-
-
 
 </body>
 </html>

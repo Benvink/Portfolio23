@@ -1,90 +1,45 @@
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function(e) {
-    e.preventDefault();
+// document.addEventListener('DOMContentLoaded', () => {
 
-    const targetId = this.getAttribute('href').substring(1);
-    const targetElement = document.getElementById(targetId);
+//   // Get all "navbar-burger" elements
+//   const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
 
-    if (targetElement) {
-      window.scrollTo({
-        top: targetElement.offsetTop,
-        behavior: 'smooth'
-      });
-    }
-  });
-});
+//   // Add a click event on each of them
+//   $navbarBurgers.forEach( el => {
+//     el.addEventListener('click', () => {
 
-const navbar = document.querySelector('navSectionBar');
+//       // Get the target from the "data-target" attribute
+//       const target = el.dataset.target;
+//       const $target = document.getElementById(target);
 
-window.addEventListener('scroll', () => {
-  // Get the current scroll position
-  const scrollY = window.scrollY;
+//       // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+//       el.classList.toggle('is-active');
+//       $target.classList.toggle('is-active');
 
-  // Set a threshold for when to add/remove the sticky class
-  const threshold = 50; // Adjust this value as needed
+//     });
+//   });
 
-  // Add or remove the sticky class based on the scroll position
-  if (scrollY >= threshold) {
-    navbar.classList.add('navbar-sticky');
-  } else {
-    navbar.classList.remove('navbar-sticky');
-  }
-});
+const textContainer = document.getElementById("sectionBox");
+const text = textContainer.innerText;
+let charIndex = 0;
 
-
-
-const textToType = [
-    "I'm a ",
-    "<strong>growth product manager</strong> with a ",
-    "<strong>broad range of experience</strong> in startups and scale-ups ",
-    "across multiple industries and verticals. My main areas of focus are: ",
-    "<ul>",
-    "<li class='arrow-list-item'>Sustainability</li>",
-    "<li class='arrow-list-item'>SaaS</li>",
-    "<li class='arrow-list-item'>FinTech</li>",
-    "</ul>"
-  ];
-  
-  const arrowListCSS = `
-    .arrow-list-item {
-      list-style-type: none;
-      padding-left: 20px;
-      background:  no-repeat left center;
-    }
-  `;
-  
-  const styleSheet = document.createElement("style");
-  styleSheet.type = "text/css";
-  styleSheet.innerText = arrowListCSS;
-  document.head.appendChild(styleSheet);
-  
-  const typingContainer = document.getElementById("typing-container");
-  const typingText = document.getElementById("typing-text");
-  const cursor = document.getElementById("cursor");
-  let partIndex = 0;
-  
-  function typeText() {
-    if (partIndex < textToType.length) {
-      typingText.innerHTML += textToType[partIndex];
-      partIndex++;
-      setTimeout(typeText, 1000);
+function typeText() {
+    if (charIndex < text.length) {
+        textContainer.style.opacity = 1;
+        textContainer.innerHTML += text.charAt(charIndex);
+        charIndex++;
+        setTimeout(typeText, 50);
     } else {
-      cursor.style.display = "none";
+        // Animation is complete, you can add logic to stop or perform any other action here
+        clearInterval(typingInterval); // Stop the animation
     }
-  }
-  
-  typeText();
+}
 
-  const portfolioBlurb = document.querySelector('.portfolioBlurb');
-  const selectedPortfolioProjects = document.querySelector('.selectedPortfolioProjects');
-  
-  window.addEventListener('scroll', function () {
-      const scrollY = window.scrollY;
-      const selectedProjectsOffsetTop = selectedPortfolioProjects.getBoundingClientRect().top;
-  
-      if (scrollY > selectedProjectsOffsetTop) {
-          portfolioBlurb.style.top = `${scrollY - selectedProjectsOffsetTop}px`;
-      } else {
-          portfolioBlurb.style.top = '0';
-      }
-  });
+// Start the typing animation when the page loads
+const typingInterval = setInterval(typeText, 50);
+
+
+
+
+
+
+
